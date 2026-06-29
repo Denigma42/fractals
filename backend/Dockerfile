@@ -12,7 +12,7 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /build/internal/cgo
+WORKDIR /build/internal/fractals
 RUN g++ -c -fPIC -O3 -std=c++17 -pthread fractals.cpp -o fractals.o
 RUN ar rcs libfractals.a fractals.o
 

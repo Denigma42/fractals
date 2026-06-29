@@ -5,7 +5,7 @@ import (
     "fmt"
     "runtime"
     "sync"
-    "go-fractals/internal/cgo"
+    cgo "go-fractals/internal/fractals"
     "go-fractals/internal/model"
     "go-fractals/internal/repository"
 )

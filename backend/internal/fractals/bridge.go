@@ -1,8 +1,8 @@
-package cgo
+package fractals
 
 /*
-#cgo CFLAGS: -I./internal/cgo
-#cgo LDFLAGS: -L. -lfractals -pthread -lstdc++
+#cgo CFLAGS: -I${SRCDIR}
+#cgo LDFLAGS: -L${SRCDIR} -lfractals -pthread -lstdc++
 #include <stdlib.h>
 #include "fractals.h"
 */
@@ -28,7 +28,7 @@ func ComputeTile(width, height int, xMin, xMax, yMin, yMax float64, maxIter int,
 	}
 	defer C.free(cBuf)
 
-	cStopFlag := (*C.int)(C.malloc(C.sizeof_int))
+	cStopFlag := (*C.int)(C.malloc(C.size_t(unsafe.Sizeof(C.int(0)))))
 	if cStopFlag == nil {
 		return nil, context.Canceled
 	}

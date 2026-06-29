@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: fractal-backend
+    ports:
+      - "${PORT:-8080}:8080"
+    env_file:
+      - backend/.env
+    restart: unless-stopped
+    # Для разработки можно смонтировать код, но при продакшене лучше не надо
+    # volumes:
+    #   - ./backend:/app
+    #   - /app/internal/cgo/libfractals.a  # можно пересобрать внутри контейнера
+
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: fractal-frontend
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - backend
+  #   # ...

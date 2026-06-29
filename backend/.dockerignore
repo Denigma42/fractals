@@ -1,0 +1,7 @@
+.git
+*.log
+tmp/
+vendor/
+fractal-server
+*.a
+*.o

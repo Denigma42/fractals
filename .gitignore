@@ -1,0 +1,20 @@
+# Общие
+.DS_Store
+*.log
+*.tmp
+.env
+.idea/
+.vscode/
+
+# Backend (Go + C++)
+backend/fractal-server
+backend/internal/cgo/*.o
+backend/internal/cgo/*.a
+backend/coverage.out
+backend/vendor/
+
+# Frontend (Vue/Node)
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/*.log

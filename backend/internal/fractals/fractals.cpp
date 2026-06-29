@@ -168,7 +168,7 @@ extern "C" void ComputeTile(TileParams* params) {
                 }
                 exit_loop:;
             }
-            completedRows.fetch_add(1);
+            completedRows.fetch_add(yEnd - yStart);
         });
     }
 
